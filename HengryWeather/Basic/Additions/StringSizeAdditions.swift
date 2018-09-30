@@ -20,11 +20,11 @@ extension String {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = lineBreakMode
         paragraphStyle.lineSpacing = max(0, lineSpacing)
-        let attributes = [NSAttributedStringKey.font: font, NSAttributedStringKey.paragraphStyle: paragraphStyle]
+        let attributes = [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paragraphStyle]
         return self.size(with: attributes, constrainted: constrainted)
     }
     
-    public func size(with attribute:[NSAttributedStringKey: Any], constrainted: CGSize) -> CGSize {
+    public func size(with attribute:[NSAttributedString.Key: Any], constrainted: CGSize) -> CGSize {
         let stringText = self as NSString
         let rect = stringText.boundingRect(with: constrainted, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attribute, context: nil)
         return CGSize(width: ceil(rect.width), height: ceil(rect.height))

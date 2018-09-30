@@ -12,7 +12,7 @@ public class BaseTableViewCell: UITableViewCell {
     
     public var topSeparator: UIView!
     public var bottomSeparator: UIView!
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupSubviews()
     }
@@ -34,7 +34,7 @@ public class BaseTableViewCell: UITableViewCell {
             return
         }
         if cellItem.showArrow {
-            self.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         }
         self.textLabel?.text = cellItem.name
     }

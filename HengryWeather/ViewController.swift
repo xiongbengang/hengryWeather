@@ -38,8 +38,7 @@ class ViewController: UIViewController {
     }
     
     func setupSubviews() {
-        
-        let refreshBarItem = UIBarButtonItem(title: "刷新", style: UIBarButtonItemStyle.plain, target: self, action: #selector(refreshButtonClick))
+        let refreshBarItem = UIBarButtonItem(title: "刷新", style: UIBarButtonItem.Style.plain, target: self, action: #selector(refreshButtonClick))
         navigationItem.rightBarButtonItem = refreshBarItem
         
         cityLabel = UILabel(frame: CGRect.zero)

@@ -12,6 +12,7 @@ target 'HengryWeather' do
   pod 'ObjectMapper', '~> 3.3.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'Kingfisher', '~> 4.8.1'
+  pod 'Charts'
 
   target 'HengryWeatherTests' do
     inherit! :search_paths

@@ -30,8 +30,8 @@ public struct Queue<T>: CustomStringConvertible {
         self.elements.append(element)
     }
     
-    public mutating func dequeue() -> T? {
-        if self.isEmpty { return nil }
+    public mutating func dequeue() -> T {
+        if self.isEmpty { fatalError("queue is empty") }
         return self.elements.removeFirst()
     }
     

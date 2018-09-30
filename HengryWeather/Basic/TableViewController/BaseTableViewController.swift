@@ -13,7 +13,7 @@ public class BaseTableViewController: UIViewController {
 
     public var sections: [TableSection]!
     public var tableView: UITableView!
-    public var tableViewStyle: UITableViewStyle { return UITableViewStyle.plain }
+    public var tableViewStyle: UITableView.Style { return .plain }
     
     override public func viewDidLoad() {
         super.viewDidLoad()

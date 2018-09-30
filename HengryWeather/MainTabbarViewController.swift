@@ -13,7 +13,6 @@ class MainTabbarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControllers()
-        
     }
 
     func setupControllers() {

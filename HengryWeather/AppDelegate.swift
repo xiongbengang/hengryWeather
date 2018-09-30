@@ -8,19 +8,26 @@
 
 import UIKit
 
+class Person: NSObject {
+    var name: String
+    var age: String = "18"
+    init(name: String) {
+        self.name = name
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
         let mainTabbarViewController = MainTabbarViewController()
         window?.rootViewController = mainTabbarViewController
-
         Algorithm().main()
         return true
     }

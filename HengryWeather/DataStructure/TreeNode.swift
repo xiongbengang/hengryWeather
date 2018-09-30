@@ -100,7 +100,7 @@ public class TreeNode<T>:CustomStringConvertible {
         queue.enqueue(self)
         var path = ""
         while !queue.isEmpty {
-            let top = queue.dequeue()!
+            let top = queue.dequeue()
             if path.isEmpty {
                 path.append("\(top.value)")
             } else {

@@ -20,7 +20,11 @@ public func navigationTopHeight() -> CGFloat {
 }
 
 public func tabbarBottomHeight() -> CGFloat {
-    return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 + tabbarHeight
+    if #available(iOS 11.0, *) {
+        return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0 + tabbarHeight
+    } else {
+        return tabbarHeight
+    }
 }
 
 public var screenWidth: CGFloat = {
