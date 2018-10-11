@@ -30,40 +30,37 @@ public class RouterRequest {
         case present(TransationFinished?)
     }
     
-    public var url: URL
+    public var urlString: String
     public var parameters: [String: Any]
     public var sourceController: UIViewController
     public var transationStyle: TransationStyle
     public var transationAnimated: Bool = true
     
-    public var urlHost: String? {
-        return url.host
+    private var url: URL?
+    
+    public var identifier: String {
+        if let host = self.url?.host {
+            return host
+        }
+        return urlString.lowercased()
     }
     
     public var allParameters: [String: Any] {
-        let merged = self.parameters.merging(url.queryParameters) { (_, new) -> Any in
-            return new
+        guard let url = self.url else {
+            return self.parameters
         }
-        return merged
+        return self.parameters.merging(url.queryParameters) { (_, new) -> Any in new }
     }
     
-    public init(url: URL, parameters: [String: Any],
+    public init(urlString:String,
+                parameters: [String: Any] = [:],
                 sourceController: UIViewController = UIViewController.topMost(),
                 transationStyle: TransationStyle = .push) {
-        self.url = url
+        self.urlString = urlString
+        self.url = URL(string: urlString)
         self.parameters = parameters
         self.sourceController = sourceController
         self.transationStyle = transationStyle
-    }
-    
-    public convenience init(urlString:String,
-                            parameters: [String: Any] = [:],
-                            sourceController: UIViewController = UIViewController.topMost(),
-                            transationStyle: TransationStyle = .push) {
-        guard let url = URL(string: urlString) else {
-            fatalError()
-        }
-        self.init(url: url, parameters: parameters)
     }
 }
 
@@ -71,54 +68,64 @@ public protocol RouterHandler: AnyObject {
     
     func handleRequest(_ request: RouterRequest)
     
-    func responseController(for routerRequest: RouterRequest) -> UIViewController?
+}
+
+public protocol RouterResponsable {
+    func config(with parameters: [String: Any])
 }
 
 
-public class BaseRouterHandler: RouterHandler {
+public class Router {
     
-    public func handleRequest(_ request: RouterRequest) {
-        guard let responseController = self .responseController(for: request) else { return }
+    public static let ViewControllerTitleKey = "title"
+
+    public static let shared: Router = {
+        return Router()
+    }()
+    
+    private var viewControllersMap: [String: UIViewController.Type] = [:]
+    
+    public func regist(_ urlString: String, controllerClass: UIViewController.Type) {
+        viewControllersMap[urlString.lowercased()] = controllerClass
+    }
+    
+    public func open(_ urlString: String,
+                     from sourceController: UIViewController = UIViewController.topMost(),
+                     parameters: [String: Any] = [:],
+                     transationStyle: RouterRequest.TransationStyle = .push) {
+        self.open(RouterRequest(urlString: urlString, parameters: parameters, sourceController: sourceController, transationStyle: transationStyle))
+    }
+    
+    public func open(_ request:RouterRequest, customerHandler: RouterHandler? = nil) {
+        if let handler = customerHandler {
+            handler.handleRequest(request)
+        } else {
+            handleRequest(request)
+        }
+    }
+    
+    private func responseController(for request: RouterRequest) -> UIViewController? {
+        guard let cls = viewControllersMap[request.identifier] else { return nil }
+        let xibName = NSStringFromClass(cls).components(separatedBy: ".").last
+        let xibPath = Bundle.main.path(forResource: xibName, ofType: "nib")
+        let responseController: UIViewController
+        if let xibPath = xibPath, FileManager.default.fileExists(atPath: xibPath) {
+            responseController = cls.init(nibName: xibName, bundle: nil)
+        } else {
+            responseController = cls.init()
+        }
+        if let responseController = responseController as? RouterResponsable {
+            responseController.config(with: request.allParameters)
+        }
+        return responseController
+    }
+    
+    private func handleRequest(_ request: RouterRequest) {
+        guard let responseController = responseController(for: request) else { return }
         if case .push = request.transationStyle {
             request.sourceController.navigationController?.pushViewController(responseController, animated: request.transationAnimated)
         } else if case .present(let completion) = request.transationStyle {
             request.sourceController.present(responseController, animated: request.transationAnimated, completion: completion)
         }
-    }
-    
-    public func responseController(for routerRequest: RouterRequest) -> UIViewController? {
-        return nil
-    }
-}
-
-public class Router {
-    
-    public static let router: Router = {
-        return Router()
-    }()
-    
-    public init() {
-    
-    }
-    
-    private var handlerClassMapping: [String: RouterHandler.Type] = [:]
-    private func routerHandler(for request: RouterRequest) -> RouterHandler {
-        let handler = BaseRouterHandler()
-        guard let host = request.urlHost else { return handler}
-        let handlerClass = self.handlerClassMapping[host]
-        return handler
-    }
-    
-    public func regist(_ urlString: String, handlerClass: RouterHandler.Type) {
-        self.handlerClassMapping[urlString] = handlerClass
-    }
-    
-    public func open(_ request:RouterRequest, sourceController: UIViewController = UIViewController.topMost(), parameters: [String: Any] = [:], customerHandler: RouterHandler?) {
-        if let handler = customerHandler {
-            handler.handleRequest(request)
-        } else {
-            BaseRouterHandler().handleRequest(request)
-        }
-        self.regist("aaa", handlerClass: BaseRouterHandler.self)
     }
 }

@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class CellItem {
-    public var cellHeight: CGFloat?
-    public var name: String?
-    public var showArrow: Bool = false
+open class CellItem {
+    open var cellHeight: CGFloat?
+    open var name: String?
+    open var showArrow: Bool = false
 }
 
-public class TableSection {
-    public var headerHeight: CGFloat = 0
-    public var footerHeight: CGFloat = 0
-    public var items: [CellItem]
+open class TableSection {
+    open var headerHeight: CGFloat = 0.1
+    open var footerHeight: CGFloat = 0.1
+    open var items: [CellItem]
     public init(items: [CellItem]) {
         self.items = items
     }

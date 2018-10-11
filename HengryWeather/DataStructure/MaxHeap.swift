@@ -15,8 +15,8 @@ public struct MaxHeap<E: Comparable>: CustomStringConvertible {
         for element in elements {
             datas.append(element)
         }
-        for i in 0...parent(of: datas.count - 1) {  // 第一个叶子结点的父结点开始shiftDown操作
-            shiftDown(index: i)
+        for index in stride(from: datas.count-1, through: 0, by: -1) {
+            shiftDown(index: index)
         }
     }
     
@@ -96,7 +96,7 @@ public struct MaxHeap<E: Comparable>: CustomStringConvertible {
         return BinaryTreeLogger.treeString(0) { (index: Int) -> (String, Int?, Int?) in
             let left: Int? = leftChild(of: index) < self.datas.count ? leftChild(of: index) : nil
             let right: Int? = rightChild(of: index) < self.datas.count ? rightChild(of: index) : nil
-            return ("\(self.datas[index])", left, right)
+            return ("\(index)", left, right)
         }
     }
 }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class BaseTableViewCell: UITableViewCell {
+open class BaseTableViewCell: UITableViewCell {
     
-    public var topSeparator: UIView!
-    public var bottomSeparator: UIView!
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    open var topSeparator: UIView!
+    open var bottomSeparator: UIView!
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupSubviews()
     }
@@ -22,14 +22,14 @@ public class BaseTableViewCell: UITableViewCell {
         self.setupSubviews()
     }
     
-    public func setupSubviews() {
+    open func setupSubviews() {
         topSeparator = UIView()
         addSubview(topSeparator)
         bottomSeparator = UIView()
         addSubview(bottomSeparator)
     }
     
-    public func bind(data: Any) {
+    open func bind(data: Any) {
         guard let cellItem = data as? CellItem else {
             return
         }

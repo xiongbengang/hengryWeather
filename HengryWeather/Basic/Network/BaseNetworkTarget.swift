@@ -12,20 +12,6 @@ import ObjectMapper
 
 class BaseNetworkTarget: NetworkTargetType {
     
-    init(baseURLString:String = "",
-         path:String = "",
-         method:Moya.Method = .post,
-         bodyParameters: [String: Any] = [:],
-         urlParameters: [String: Any] = [:],
-         parsedClass: Mappable.Type? = nil) {
-        self.baseURLString = baseURLString
-        self.path = path
-        self.method = method
-        self.bodyParameters = bodyParameters
-        self.urlParameters = urlParameters
-        self.parsedClass = parsedClass
-    }
-    
     var parsedClass: Mappable.Type?
     
     var baseURLString:String
@@ -57,5 +43,19 @@ class BaseNetworkTarget: NetworkTargetType {
         return { (responseItem) -> Bool in
             return responseItem.code == 0
         }
+    }
+    
+    init(baseURLString:String = "",
+         path:String = "",
+         method:Moya.Method = .post,
+         bodyParameters: [String: Any] = [:],
+         urlParameters: [String: Any] = [:],
+         parsedClass: Mappable.Type? = nil) {
+        self.baseURLString = baseURLString
+        self.path = path
+        self.method = method
+        self.bodyParameters = bodyParameters
+        self.urlParameters = urlParameters
+        self.parsedClass = parsedClass
     }
 }

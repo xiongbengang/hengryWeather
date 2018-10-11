@@ -16,12 +16,14 @@
 		2D241095215F9CB000A3BC5E /* BinaryTreeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241094215F9CB000A3BC5E /* BinaryTreeLogger.swift */; };
 		2D2410972160D3B500A3BC5E /* DataSortor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2410962160D3B500A3BC5E /* DataSortor.swift */; };
 		2D2C82F82113F580000B9EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C82F72113F580000B9EC4 /* AppDelegate.swift */; };
-		2D2C82FA2113F580000B9EC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C82F92113F580000B9EC4 /* ViewController.swift */; };
+		2D2C82FA2113F580000B9EC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C82F92113F580000B9EC4 /* HomeViewController.swift */; };
 		2D2C82FD2113F580000B9EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C82FB2113F580000B9EC4 /* Main.storyboard */; };
 		2D2C82FF2113F583000B9EC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C82FE2113F583000B9EC4 /* Assets.xcassets */; };
 		2D2C83022113F583000B9EC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C83002113F583000B9EC4 /* LaunchScreen.storyboard */; };
 		2D2C830D2113F583000B9EC4 /* HengryWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C830C2113F583000B9EC4 /* HengryWeatherTests.swift */; };
 		2D2C83182113F583000B9EC4 /* HengryWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C83172113F583000B9EC4 /* HengryWeatherUITests.swift */; };
+		2D5AA4582167B59E005FECD7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AA4572167B59E005FECD7 /* BaseViewController.swift */; };
+		2D5AA45A2167B5CA005FECD7 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5AA4592167B5CA005FECD7 /* BaseNavigationController.swift */; };
 		2D6A8F3821253D4600308C97 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8F3721253D4600308C97 /* Delay.swift */; };
 		2D6A91EE212D588100308C97 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A91ED212D588100308C97 /* MeViewController.swift */; };
 		2D6A91F0212D58D200308C97 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A91EF212D58D200308C97 /* DiscoverViewController.swift */; };
@@ -32,6 +34,7 @@
 		2D9B02A321572D6B000AB2CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B02A221572D6B000AB2CC /* Router.swift */; };
 		2D9B02A521573797000AB2CC /* TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B02A421573797000AB2CC /* TopMostViewController.swift */; };
 		2DDD170721200C5400C94460 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDD170621200C5400C94460 /* WeatherResponse.swift */; };
+		2DEE21A4216B4719000C9DF6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE21A3216B4719000C9DF6 /* SettingsViewController.swift */; };
 		42138F96213245B400ECBA42 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138F95213245B400ECBA42 /* BaseTableViewCell.swift */; };
 		42138F98213245F300ECBA42 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138F97213245F300ECBA42 /* Model.swift */; };
 		42138F9B2132498B00ECBA42 /* UIViewLayoutAdditons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138F9A2132498B00ECBA42 /* UIViewLayoutAdditons.swift */; };
@@ -77,7 +80,7 @@
 		2D2410962160D3B500A3BC5E /* DataSortor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSortor.swift; sourceTree = "<group>"; };
 		2D2C82F42113F580000B9EC4 /* HengryWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HengryWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2C82F72113F580000B9EC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D2C82F92113F580000B9EC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D2C82F92113F580000B9EC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2D2C82FC2113F580000B9EC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D2C82FE2113F583000B9EC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D2C83012113F583000B9EC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 		2D2C83132113F583000B9EC4 /* HengryWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HengryWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2C83172113F583000B9EC4 /* HengryWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HengryWeatherUITests.swift; sourceTree = "<group>"; };
 		2D2C83192113F583000B9EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D5AA4572167B59E005FECD7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2D5AA4592167B5CA005FECD7 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		2D6A8F3721253D4600308C97 /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 		2D6A91ED212D588100308C97 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		2D6A91EF212D58D200308C97 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 		2D9B02A221572D6B000AB2CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2D9B02A421573797000AB2CC /* TopMostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMostViewController.swift; sourceTree = "<group>"; };
 		2DDD170621200C5400C94460 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		2DEE21A3216B4719000C9DF6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37244293A0152DDA4A40265B /* Pods_HengryWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HengryWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42138F95213245B400ECBA42 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		42138F97213245F300ECBA42 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -185,16 +191,17 @@
 		2D2C82F62113F580000B9EC4 /* HengryWeather */ = {
 			isa = PBXGroup;
 			children = (
+				2D5AA4552167B542005FECD7 /* Account */,
 				2D241085215DCF2900A3BC5E /* DataStructure */,
 				427490092131976F002A23B8 /* Basic */,
 				2D2C82F72113F580000B9EC4 /* AppDelegate.swift */,
-				2D2C82F92113F580000B9EC4 /* ViewController.swift */,
 				427490102131A870002A23B8 /* WeatherApi.swift */,
 				2D2C82FB2113F580000B9EC4 /* Main.storyboard */,
 				2D2C82FE2113F583000B9EC4 /* Assets.xcassets */,
 				2D2C83002113F583000B9EC4 /* LaunchScreen.storyboard */,
 				2D2C83032113F583000B9EC4 /* Info.plist */,
 				2DDD170621200C5400C94460 /* WeatherResponse.swift */,
+				2D2C82F92113F580000B9EC4 /* HomeViewController.swift */,
 				2D6A91ED212D588100308C97 /* MeViewController.swift */,
 				2D6A91EF212D58D200308C97 /* DiscoverViewController.swift */,
 				2D6A91F3212E937400308C97 /* MainTabbarViewController.swift */,
@@ -219,6 +226,23 @@
 				2D2C83192113F583000B9EC4 /* Info.plist */,
 			);
 			path = HengryWeatherUITests;
+			sourceTree = "<group>";
+		};
+		2D5AA4552167B542005FECD7 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2DEE21A3216B4719000C9DF6 /* SettingsViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2D5AA4562167B580005FECD7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2D5AA4572167B59E005FECD7 /* BaseViewController.swift */,
+				2D5AA4592167B5CA005FECD7 /* BaseNavigationController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		42138F942132458200ECBA42 /* TableViewController */ = {
@@ -248,6 +272,7 @@
 		427490092131976F002A23B8 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				2D5AA4562167B580005FECD7 /* ViewController */,
 				42138F992132491100ECBA42 /* Additions */,
 				42138F942132458200ECBA42 /* TableViewController */,
 				4274900A2131976F002A23B8 /* Network */,
@@ -454,7 +479,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HengryWeather/Pods-HengryWeather-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -465,7 +489,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -523,11 +546,14 @@
 			files = (
 				2D6A91F4212E937400308C97 /* MainTabbarViewController.swift in Sources */,
 				2D9B0291215696C4000AB2CC /* UIColorAdditions.swift in Sources */,
+				2DEE21A4216B4719000C9DF6 /* SettingsViewController.swift in Sources */,
 				2D9B02A321572D6B000AB2CC /* Router.swift in Sources */,
 				2D24108D215DCF2900A3BC5E /* TreeNode.swift in Sources */,
+				2D5AA4582167B59E005FECD7 /* BaseViewController.swift in Sources */,
 				2D6A91EE212D588100308C97 /* MeViewController.swift in Sources */,
 				42138F9D2132556600ECBA42 /* UIDeviceAdditions.swift in Sources */,
 				2D24108A215DCF2900A3BC5E /* LinkedList.swift in Sources */,
+				2D5AA45A2167B5CA005FECD7 /* BaseNavigationController.swift in Sources */,
 				4274900E2131976F002A23B8 /* NetworkManager.swift in Sources */,
 				2D6A91F2212D594600308C97 /* BaseTableViewController.swift in Sources */,
 				42138F96213245B400ECBA42 /* BaseTableViewCell.swift in Sources */,
@@ -543,7 +569,7 @@
 				42138FA121329F0800ECBA42 /* UIViewSeparatorAdditons.swift in Sources */,
 				2D24108C215DCF2900A3BC5E /* Stack.swift in Sources */,
 				2D9B029F21569D5B000AB2CC /* UIImageAdditions.swift in Sources */,
-				2D2C82FA2113F580000B9EC4 /* ViewController.swift in Sources */,
+				2D2C82FA2113F580000B9EC4 /* HomeViewController.swift in Sources */,
 				427490112131A870002A23B8 /* WeatherApi.swift in Sources */,
 				2D24108B215DCF2900A3BC5E /* Queue.swift in Sources */,
 				2D2C82F82113F580000B9EC4 /* AppDelegate.swift in Sources */,

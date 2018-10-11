@@ -11,16 +11,15 @@ import Foundation
 public typealias DelayedTask = (Bool) -> Void
 
 @discardableResult
-public func delay(_ time:TimeInterval, task:@escaping ()->()) -> DelayedTask? {
-    func dispatch_later(block:@escaping ()->()) {
+public func delay(_ time: TimeInterval, task: @escaping ()->()) -> DelayedTask? {
+    func dispatch_later(block: @escaping ()->()) {
         let t = DispatchTime.now() + time
         DispatchQueue.main.asyncAfter(deadline: t, execute: block)
     }
-    var closure:(()->())? = task
-    var result:DelayedTask?
+    var closure: (()->())? = task
+    var result: DelayedTask?
     
-    let delayClosure:DelayedTask = {
-        (cancel:Bool) in
+    let delayClosure: DelayedTask = { (cancel: Bool) in
         if let internalClosure = closure {
             if cancel == false {
                 DispatchQueue.main.async(execute: internalClosure)

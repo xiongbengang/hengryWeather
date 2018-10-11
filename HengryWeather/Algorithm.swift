@@ -35,18 +35,18 @@ class Algorithm {
 //        bst.add(element: 24)
 //        bst.add(element: 20)
     
-        var array = [1,2,5,6,7,8,4,3,8,2,8,4,5,6,8,3,2,2,4]
-        quickSort(&array)
-        print(array
-        )
-        
         var maxHeap = MaxHeap<Int>()
+        var datas = [Int]()
         for _ in 0...10 {
-            maxHeap.add(Int.random(in: 0...100))
+            let randomNumber = Int.random(in: 0...100)
+            datas.append(randomNumber)
+            maxHeap.add(randomNumber)
         }
         
+        print("maxHeap datas: \(datas)")
         print("before extractMax---------------")
         print(maxHeap)
+        print("*********************************")
         
         var orderedDatas:String = "["
         while !maxHeap.isEmpty {
