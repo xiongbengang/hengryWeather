@@ -10,8 +10,8 @@ import UIKit
 
 open class BaseTableViewCell: UITableViewCell {
     
-    open var topSeparator: UIView!
-    open var bottomSeparator: UIView!
+    open var topSeparator: UIView = UIView(frame: .zero)
+    open var bottomSeparator: UIView = UIView(frame: .zero)
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupSubviews()
@@ -23,7 +23,7 @@ open class BaseTableViewCell: UITableViewCell {
     }
     
     open func setupSubviews() {
-        topSeparator = UIView()
+        topSeparator.isHidden = true
         addSubview(topSeparator)
         bottomSeparator = UIView()
         addSubview(bottomSeparator)

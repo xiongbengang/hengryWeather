@@ -10,13 +10,18 @@ import UIKit
 import Moya
 import ObjectMapper
 
-class BaseNetworkTarget: NetworkTargetType {
+class NetworkBaseRequest: NetworkTargetType {
     
     var parsedClass: Mappable.Type?
     
     var baseURLString:String
     
     var baseURL: URL {
+        
+        if baseURLString.isEmpty, let configBaseURLString = NetworkConfig.shared.baseURLString {
+            baseURLString = configBaseURLString
+        }
+
         guard let url = URL(string: baseURLString) else {
             fatalError("URLString must is a url")
         }

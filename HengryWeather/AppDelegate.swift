@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainTabbarViewController = MainTabbarViewController()
         window?.rootViewController = mainTabbarViewController
-        Algorithm().main()
-        
         Router.shared.regist("Settings", controllerClass: SettingsViewController.self)
         
         return true

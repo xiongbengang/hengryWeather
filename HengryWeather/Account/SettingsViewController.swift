@@ -17,5 +17,4 @@ class SettingsViewController: UIViewController, RouterResponsable {
         super.viewDidLoad()
         view.backgroundColor = .red
     }
-    
 }

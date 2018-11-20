@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D24108A215DCF2900A3BC5E /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241086215DCF2900A3BC5E /* LinkedList.swift */; };
-		2D24108B215DCF2900A3BC5E /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241087215DCF2900A3BC5E /* Queue.swift */; };
-		2D24108C215DCF2900A3BC5E /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241088215DCF2900A3BC5E /* Stack.swift */; };
-		2D24108D215DCF2900A3BC5E /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241089215DCF2900A3BC5E /* TreeNode.swift */; };
-		2D24108F215E17C700A3BC5E /* MaxHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D24108E215E17C700A3BC5E /* MaxHeap.swift */; };
-		2D241091215E17E400A3BC5E /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241090215E17E400A3BC5E /* BinarySearchTree.swift */; };
-		2D241095215F9CB000A3BC5E /* BinaryTreeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D241094215F9CB000A3BC5E /* BinaryTreeLogger.swift */; };
-		2D2410972160D3B500A3BC5E /* DataSortor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2410962160D3B500A3BC5E /* DataSortor.swift */; };
 		2D2C82F82113F580000B9EC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C82F72113F580000B9EC4 /* AppDelegate.swift */; };
 		2D2C82FA2113F580000B9EC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C82F92113F580000B9EC4 /* HomeViewController.swift */; };
 		2D2C82FD2113F580000B9EC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C82FB2113F580000B9EC4 /* Main.storyboard */; };
@@ -33,6 +25,7 @@
 		2D9B029F21569D5B000AB2CC /* UIImageAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B029E21569D5B000AB2CC /* UIImageAdditions.swift */; };
 		2D9B02A321572D6B000AB2CC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B02A221572D6B000AB2CC /* Router.swift */; };
 		2D9B02A521573797000AB2CC /* TopMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B02A421573797000AB2CC /* TopMostViewController.swift */; };
+		2DB6599321A3EBDC0098226A /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB6599221A3EBDC0098226A /* NetworkConfig.swift */; };
 		2DDD170721200C5400C94460 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDD170621200C5400C94460 /* WeatherResponse.swift */; };
 		2DEE21A4216B4719000C9DF6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE21A3216B4719000C9DF6 /* SettingsViewController.swift */; };
 		42138F96213245B400ECBA42 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138F95213245B400ECBA42 /* BaseTableViewCell.swift */; };
@@ -41,9 +34,8 @@
 		42138F9D2132556600ECBA42 /* UIDeviceAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138F9C2132556600ECBA42 /* UIDeviceAdditions.swift */; };
 		42138F9F21327E9000ECBA42 /* StringSizeAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138F9E21327E9000ECBA42 /* StringSizeAdditions.swift */; };
 		42138FA121329F0800ECBA42 /* UIViewSeparatorAdditons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42138FA021329F0800ECBA42 /* UIViewSeparatorAdditons.swift */; };
-		426DD84D213EAFD000EC99F2 /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426DD84C213EAFD000EC99F2 /* Algorithm.swift */; };
 		4274900E2131976F002A23B8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274900B2131976F002A23B8 /* NetworkManager.swift */; };
-		4274900F2131976F002A23B8 /* BaseNetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274900C2131976F002A23B8 /* BaseNetworkTarget.swift */; };
+		4274900F2131976F002A23B8 /* NetworkBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274900C2131976F002A23B8 /* NetworkBaseRequest.swift */; };
 		427490112131A870002A23B8 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427490102131A870002A23B8 /* WeatherApi.swift */; };
 		4E5A1C722FAB89B02E4612B9 /* Pods_HengryWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B9DCB3049068DEC03C737 /* Pods_HengryWeatherUITests.framework */; };
 		6EA8A588B1F6EF293F511841 /* Pods_HengryWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37244293A0152DDA4A40265B /* Pods_HengryWeather.framework */; };
@@ -70,14 +62,6 @@
 /* Begin PBXFileReference section */
 		197DA3F1CCCEDB1393EA505A /* Pods-HengryWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HengryWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HengryWeatherTests/Pods-HengryWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 		293B9DCB3049068DEC03C737 /* Pods_HengryWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HengryWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D241086215DCF2900A3BC5E /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
-		2D241087215DCF2900A3BC5E /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		2D241088215DCF2900A3BC5E /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		2D241089215DCF2900A3BC5E /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
-		2D24108E215E17C700A3BC5E /* MaxHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxHeap.swift; sourceTree = "<group>"; };
-		2D241090215E17E400A3BC5E /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
-		2D241094215F9CB000A3BC5E /* BinaryTreeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTreeLogger.swift; sourceTree = "<group>"; };
-		2D2410962160D3B500A3BC5E /* DataSortor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSortor.swift; sourceTree = "<group>"; };
 		2D2C82F42113F580000B9EC4 /* HengryWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HengryWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2C82F72113F580000B9EC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D2C82F92113F580000B9EC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +86,7 @@
 		2D9B029E21569D5B000AB2CC /* UIImageAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageAdditions.swift; sourceTree = "<group>"; };
 		2D9B02A221572D6B000AB2CC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2D9B02A421573797000AB2CC /* TopMostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMostViewController.swift; sourceTree = "<group>"; };
+		2DB6599221A3EBDC0098226A /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		2DDD170621200C5400C94460 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		2DEE21A3216B4719000C9DF6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37244293A0152DDA4A40265B /* Pods_HengryWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HengryWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,9 +96,8 @@
 		42138F9C2132556600ECBA42 /* UIDeviceAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceAdditions.swift; sourceTree = "<group>"; };
 		42138F9E21327E9000ECBA42 /* StringSizeAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSizeAdditions.swift; sourceTree = "<group>"; };
 		42138FA021329F0800ECBA42 /* UIViewSeparatorAdditons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewSeparatorAdditons.swift; sourceTree = "<group>"; };
-		426DD84C213EAFD000EC99F2 /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		4274900B2131976F002A23B8 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		4274900C2131976F002A23B8 /* BaseNetworkTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworkTarget.swift; sourceTree = "<group>"; };
+		4274900C2131976F002A23B8 /* NetworkBaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkBaseRequest.swift; sourceTree = "<group>"; };
 		427490102131A870002A23B8 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		481EE6C1F152C288DA8F55BD /* Pods_HengryWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HengryWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70240A6D1299A02F1B050C6A /* Pods-HengryWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HengryWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HengryWeatherTests/Pods-HengryWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,21 +135,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D241085215DCF2900A3BC5E /* DataStructure */ = {
-			isa = PBXGroup;
-			children = (
-				2D241086215DCF2900A3BC5E /* LinkedList.swift */,
-				2D241087215DCF2900A3BC5E /* Queue.swift */,
-				2D241088215DCF2900A3BC5E /* Stack.swift */,
-				2D241089215DCF2900A3BC5E /* TreeNode.swift */,
-				2D24108E215E17C700A3BC5E /* MaxHeap.swift */,
-				2D241090215E17E400A3BC5E /* BinarySearchTree.swift */,
-				2D241094215F9CB000A3BC5E /* BinaryTreeLogger.swift */,
-				2D2410962160D3B500A3BC5E /* DataSortor.swift */,
-			);
-			path = DataStructure;
-			sourceTree = "<group>";
-		};
 		2D2C82EB2113F580000B9EC4 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				2D5AA4552167B542005FECD7 /* Account */,
-				2D241085215DCF2900A3BC5E /* DataStructure */,
 				427490092131976F002A23B8 /* Basic */,
 				2D2C82F72113F580000B9EC4 /* AppDelegate.swift */,
 				427490102131A870002A23B8 /* WeatherApi.swift */,
@@ -205,7 +173,6 @@
 				2D6A91ED212D588100308C97 /* MeViewController.swift */,
 				2D6A91EF212D58D200308C97 /* DiscoverViewController.swift */,
 				2D6A91F3212E937400308C97 /* MainTabbarViewController.swift */,
-				426DD84C213EAFD000EC99F2 /* Algorithm.swift */,
 			);
 			path = HengryWeather;
 			sourceTree = "<group>";
@@ -285,7 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				4274900B2131976F002A23B8 /* NetworkManager.swift */,
-				4274900C2131976F002A23B8 /* BaseNetworkTarget.swift */,
+				4274900C2131976F002A23B8 /* NetworkBaseRequest.swift */,
+				2DB6599221A3EBDC0098226A /* NetworkConfig.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -548,32 +516,24 @@
 				2D9B0291215696C4000AB2CC /* UIColorAdditions.swift in Sources */,
 				2DEE21A4216B4719000C9DF6 /* SettingsViewController.swift in Sources */,
 				2D9B02A321572D6B000AB2CC /* Router.swift in Sources */,
-				2D24108D215DCF2900A3BC5E /* TreeNode.swift in Sources */,
 				2D5AA4582167B59E005FECD7 /* BaseViewController.swift in Sources */,
 				2D6A91EE212D588100308C97 /* MeViewController.swift in Sources */,
 				42138F9D2132556600ECBA42 /* UIDeviceAdditions.swift in Sources */,
-				2D24108A215DCF2900A3BC5E /* LinkedList.swift in Sources */,
 				2D5AA45A2167B5CA005FECD7 /* BaseNavigationController.swift in Sources */,
 				4274900E2131976F002A23B8 /* NetworkManager.swift in Sources */,
 				2D6A91F2212D594600308C97 /* BaseTableViewController.swift in Sources */,
 				42138F96213245B400ECBA42 /* BaseTableViewCell.swift in Sources */,
-				426DD84D213EAFD000EC99F2 /* Algorithm.swift in Sources */,
-				2D24108F215E17C700A3BC5E /* MaxHeap.swift in Sources */,
 				42138F9F21327E9000ECBA42 /* StringSizeAdditions.swift in Sources */,
-				4274900F2131976F002A23B8 /* BaseNetworkTarget.swift in Sources */,
-				2D2410972160D3B500A3BC5E /* DataSortor.swift in Sources */,
+				4274900F2131976F002A23B8 /* NetworkBaseRequest.swift in Sources */,
 				42138F9B2132498B00ECBA42 /* UIViewLayoutAdditons.swift in Sources */,
 				42138F98213245F300ECBA42 /* Model.swift in Sources */,
 				2D6A91F0212D58D200308C97 /* DiscoverViewController.swift in Sources */,
-				2D241095215F9CB000A3BC5E /* BinaryTreeLogger.swift in Sources */,
 				42138FA121329F0800ECBA42 /* UIViewSeparatorAdditons.swift in Sources */,
-				2D24108C215DCF2900A3BC5E /* Stack.swift in Sources */,
 				2D9B029F21569D5B000AB2CC /* UIImageAdditions.swift in Sources */,
 				2D2C82FA2113F580000B9EC4 /* HomeViewController.swift in Sources */,
 				427490112131A870002A23B8 /* WeatherApi.swift in Sources */,
-				2D24108B215DCF2900A3BC5E /* Queue.swift in Sources */,
 				2D2C82F82113F580000B9EC4 /* AppDelegate.swift in Sources */,
-				2D241091215E17E400A3BC5E /* BinarySearchTree.swift in Sources */,
+				2DB6599321A3EBDC0098226A /* NetworkConfig.swift in Sources */,
 				2D9B02A521573797000AB2CC /* TopMostViewController.swift in Sources */,
 				2DDD170721200C5400C94460 /* WeatherResponse.swift in Sources */,
 				2D6A8F3821253D4600308C97 /* Delay.swift in Sources */,
