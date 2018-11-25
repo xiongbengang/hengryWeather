@@ -77,34 +77,19 @@ class HomeViewController: BaseViewController {
     }
     
     func loadDatas() {
-        let weatherApi = WeatherApi(baseURLString: "https://restapi.amap.com/",
-                                           path: "v3/weather/weatherInfo",
-                                           method: .get,
-                                           urlParameters: ["key": "4d666b515b69193fc3b4d62cdec4bdc4", "city": "110101"],
-                                           parsedClass: WeatherResponse.self)
-        NetworkManager.shared.request(target: weatherApi, netwokHandler: self)
+        let request = BaseRequest<NetworkBaseItem>(path: "v3/weather/weatherInfo", urlParameters: ["key": "4d666b515b69193fc3b4d62cdec4bdc4", "city": "110101"])
+        request.method = .get
+        request.encodingType = .http
+        request.baseURLString = "https://restapi.amap.com/"
+        CommonNetworkClient.shared.sendRequest(target: request, success: { (responseItem) in
+            
+        }, failure: { (error) in
+            
+        }, customHandler: nil)
+    
+        
     }
     @IBAction func refreshButtonClick() {
         loadDatas()
-    }
-}
-
-extension HomeViewController: NetworkHandler {
-    
-    func handleResponseSuccess(responseItem: ResponseItem) {
-        let resp = responseItem.parsed as? WeatherResponse
-        let firstLive = resp?.lives?.first
-        let province = firstLive?.province
-        let city = firstLive?.city
-        self.cityLabel.text = "\(province ?? "")\(city ?? "")"
-        self.weatherTypeLabel.text = firstLive?.weather
-        self.temperatureLabel.text = firstLive?.temperature
-        self.reportTime.text = firstLive?.reporttime
-    }
-    func handleResponseError(responseItem: ResponseItem) {
-        
-    }
-    func handleResponseFailed(error:MoyaError) {
-        
     }
 }
