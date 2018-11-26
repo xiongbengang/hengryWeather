@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SnapKit
 
 open class BaseTableViewCell: UITableViewCell {
     
-    open var topSeparator: UIView = UIView(frame: .zero)
-    open var bottomSeparator: UIView = UIView(frame: .zero)
+    open var uiData: Any?
+    open var topSeparator: UIView!
+    open var bottomSeparator: UIView!
+    open var customSeparatorInset: UIEdgeInsets = .zero
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupSubviews()
@@ -23,19 +27,39 @@ open class BaseTableViewCell: UITableViewCell {
     }
     
     open func setupSubviews() {
+        topSeparator = UIView(frame: .zero)
         topSeparator.isHidden = true
         addSubview(topSeparator)
-        bottomSeparator = UIView()
+        topSeparator.snp.makeConstraints { (maker) in
+            maker.left.equalTo(self).offset(self.customSeparatorInset.left)
+            maker.right.equalTo(self).offset(-self.customSeparatorInset.right)
+            maker.top.equalTo(self)
+            maker.height.equalTo(1.0/UIScreen.main.scale)
+        }
+        
+        bottomSeparator = UIView(frame: .zero)
+        bottomSeparator.isHidden = true
         addSubview(bottomSeparator)
+        bottomSeparator.snp.makeConstraints { (maker) in
+            maker.left.equalTo(self).offset(self.customSeparatorInset.left)
+            maker.right.equalTo(self).offset(-self.customSeparatorInset.right)
+            maker.bottom.equalTo(self)
+            maker.height.equalTo(1.0/UIScreen.main.scale)
+        }
     }
     
     open func bind(data: Any) {
-        guard let cellItem = data as? CellItem else {
-            return
+        self.uiData = data
+        if let cellItem = data as? CellItem {
+            if cellItem.showArrow {
+                self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            }
+            self.textLabel?.text = cellItem.name
         }
-        if cellItem.showArrow {
-            self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        }
-        self.textLabel?.text = cellItem.name
+    }
+    
+    open func refresh() {
+        guard let uidata = uiData else { return }
+        bind(data: uidata)
     }
 }

@@ -77,8 +77,10 @@ public protocol RouterResponsable {
 
 public class Router {
     
-    public static let ViewControllerTitleKey = "title"
-
+    public enum Key: String {
+        case title = "title"
+    }
+    
     public static let shared: Router = {
         return Router()
     }()

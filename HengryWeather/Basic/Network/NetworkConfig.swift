@@ -22,7 +22,7 @@ extension NetworkActivityPlugin {
     }
 }
 
-public class NetworkConfig {
+public final class NetworkConfig {
     
     public var baseURLString:String?
     public var defaultMethod:Moya.Method = .post

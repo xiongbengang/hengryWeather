@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, RouterResponsable {
     func config(with parameters: [String : Any]) {
-        self.title = parameters[Router.ViewControllerTitleKey] as? String
+        self.title = parameters[Router.Key.title.rawValue] as? String
     }
 
     override func viewDidLoad() {

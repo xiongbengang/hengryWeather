@@ -48,7 +48,7 @@ class MeViewController: BaseTableViewController {
         super.tableView(tableView, didSelectRowAt: indexPath)
         if settingItem === cellItemAt(indexPath) {
             let settingPath = "Settings"
-            Router.shared.open(settingPath, from: self, parameters: [Router.ViewControllerTitleKey: "设置"])
+            Router.shared.open(settingPath, from: self, parameters: [Router.Key.title.rawValue: "设置"])
         }
     }
 }

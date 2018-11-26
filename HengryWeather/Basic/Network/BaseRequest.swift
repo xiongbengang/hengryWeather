@@ -24,15 +24,15 @@ open class BaseRequest<T>: NetworkTargetType where T: ResponseParsable {
         self.urlParameters = urlParameters
     }
     
-    public var baseURLString: String?
-    public var path: String
-    public var plugins: [PluginType] = []
-    public var bodyParameters: [String: Any]
-    public var urlParameters: [String: Any]
-    public var encodingType: EncodingType = .json
-    public var headers: [String : String]?
+    open var baseURLString: String?
+    open var path: String
+    open var plugins: [PluginType] = []
+    open var bodyParameters: [String: Any]
+    open var urlParameters: [String: Any]
+    open var encodingType: EncodingType = .json
+    open var headers: [String : String]?
     
-    public var baseURL: URL {
+    open var baseURL: URL {
         if let baseURLString = baseURLString {
             if let url = URL(string: baseURLString) {
                 return url
@@ -48,13 +48,13 @@ open class BaseRequest<T>: NetworkTargetType where T: ResponseParsable {
         }
     }
     
-    public var method: Moya.Method = NetworkConfig.default.defaultMethod
+    open var method: Moya.Method = NetworkConfig.default.defaultMethod
     
-    public var sampleData: Data {
+    open var sampleData: Data {
         return "".data(using: .utf8)!
     }
     
-    public var task: Task {
+    open var task: Task {
         switch encodingType {
         case .http:
             return Task.requestCompositeParameters(bodyParameters: bodyParameters, bodyEncoding: URLEncoding.httpBody, urlParameters: urlParameters)

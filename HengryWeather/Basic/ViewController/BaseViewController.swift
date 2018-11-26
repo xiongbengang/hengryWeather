@@ -14,7 +14,15 @@ open class BaseViewController: UIViewController, RouterResponsable {
         super.viewDidLoad()
     }
     
-    public func config(with parameters: [String : Any]) {
-        self.title = parameters[Router.ViewControllerTitleKey] as? String
+    open func config(with parameters: [String : Any]) {
+        self.title = parameters[Router.Key.title.rawValue] as? String
+    }
+    
+    open func back() {
+        if let count = navigationController?.viewControllers.count, count > 1 {
+            navigationController?.popViewController(animated: true)
+        } else if let presentingViewController = self.presentingViewController {
+            presentingViewController.dismiss(animated: true, completion: nil)
+        }
     }
 }

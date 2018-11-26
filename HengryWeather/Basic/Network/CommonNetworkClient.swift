@@ -17,8 +17,12 @@ public protocol ResponseParsable {
 }
 
 public protocol NetworkTargetType: TargetType {
-    var plugins: [PluginType] { get }
     associatedtype ResponseItem: ResponseParsable
+    
+    typealias SuccessCallback = (ResponseItem?) -> ()
+    typealias FailureCallback = (MoyaError) -> ()
+    
+    var plugins: [PluginType] { get }
 }
 
 public protocol NetworkHandlable {
@@ -32,16 +36,15 @@ extension NetworkHandlable {
 }
 
 public protocol NetworkClient {
-    typealias SuccessCallback = (ResponseParsable?) -> ()
-    typealias FailureCallback = (MoyaError) -> ()
-    func sendRequest<T: NetworkTargetType>(target: T, success: SuccessCallback?, failure: FailureCallback?, customHandler: NetworkHandlable?)
+    func sendRequest<T: NetworkTargetType>(target: T, success: T.SuccessCallback?, failure: T.FailureCallback?, customHandler: NetworkHandlable?)
 }
 
-public class CommonNetworkClient: NetworkClient {
+public final class CommonNetworkClient: NetworkClient {
     public func sendRequest<T: NetworkTargetType>(target: T,
-                                                  success: SuccessCallback? = nil,
-                                                  failure: FailureCallback? = nil,
+                                                  success: T.SuccessCallback? = nil,
+                                                  failure: T.FailureCallback? = nil,
                                                   customHandler: NetworkHandlable? = nil) {
+        
         var plugins = NetworkConfig.default.defaultPlugins
         plugins.append(contentsOf: target.plugins)
         let provider = MoyaProvider<T>(plugins: plugins)
