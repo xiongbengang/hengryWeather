@@ -7,8 +7,17 @@
 //
 
 import Foundation
+import Moya
 
-public class WeatherResponse: Codable {
+public class WeatherResponse: NetworkBaseItem {
+    public var weather: Weather?
+    public required init(_ response: Response) {
+        self.weather = try? response.map(Weather.self)
+        super.init(response)
+    }
+}
+
+public class Weather: Codable {
     public var count: String?
     public var info: String?
     public var infocode: String?

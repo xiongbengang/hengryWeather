@@ -15,7 +15,9 @@ open class NetworkBaseItem: ResponseParsable {
     public var rawJSON: JSON?
     public var code: Int = 0
     public var message: String = ""
+    public var rawResponse: Response
     required public init(_ response: Response) {
+        self.rawResponse = response
         if let jsonObj = try? response.mapJSON() {
             self.rawJSON = JSON(jsonObj)
         }
@@ -23,7 +25,4 @@ open class NetworkBaseItem: ResponseParsable {
         self.code = json["code"].intValue
         self.message = json["message"].stringValue
     }
-    let jsonDecoder = JSONDecoder()
-    jsond
-    
 }
